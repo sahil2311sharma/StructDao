@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
+.spotlightMain{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    padding: 20px;
+    min-height: 70.1vh;
+}
+.makeCentre-l{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.makeCentre-l >div> h1 {
+    font-family: 'Bowlby One SC';
+    font-style: normal;
+    font-size: 30px;
+    color: #FF0000;
+}
+.makeCentre-l >div> h5 {
+    font-family: 'Bubblegum Sans';
+    font-style: normal;
+    font-size: 20px;
+    margin-right: 200px;
+    color: #FFFFFF;
+}
+.makeCentre-l >div> h2{
+    font-family: 'Bowlby One SC';
+    font-style: normal;
+    font-size: 25px;
+    color: #FFFFFF;
+}
+.makeCentre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.spotImage{
+    
+}
