@@ -1,5 +1,79 @@
 @import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
+
+html {
+	 box-sizing: border-box;
+}
+ *, *:before, *:after {
+	 box-sizing: inherit;
+}
+
+ :root {
+	 --animation-delay: 0.5s;
+	 --duration: 1300ms;
+	 --iterations: 1;
+}
+ h1, h2 {
+	 margin: 0 50px;
+	 display: inline-block;
+}
+ .reveal {
+	 position: relative;
+	 font-size: 72px;
+	 user-select: none;
+	 animation-name: reveal-text;
+	 cursor: default;
+}
+ .reveal:after {
+	 content: "";
+	 position: absolute;
+	 z-index: 10;
+	 top: 0;
+	 left: 0;
+	 right: 0;
+	 bottom: 0;
+	 background-color: #3686ff;
+	 transform: scaleX(0);
+	 transform-origin: 0 50%;
+	 pointer-events: none;
+	 animation-name: revealer-text;
+}
+ .reveal, .reveal:after {
+	 animation-delay: var(--animation-delay);
+	 animation-iteration-count: var(--iterations);
+	 animation-duration: var(--duration);
+	 animation-fill-mode: both;
+	 animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+ .reveal.purple:after {
+	 background-color: #b39fff;
+}
+ .reveal.purple, .reveal.purple:after {
+	 animation-delay: 0.75s;
+}
+ @keyframes reveal-text {
+	 from {
+		 clip-path: inset(0 100% 0 0);
+	}
+	 to {
+		 clip-path: inset(0 0 0 0);
+	}
+}
+ @keyframes revealer-text {
+	 0%, 50% {
+		 transform-origin: 0 50%;
+	}
+	 60%, 100% {
+		 transform-origin: 100% 50%;
+	}
+	 60% {
+		 transform: scaleX(1);
+	}
+	 100% {
+		 transform: scaleX(0);
+	}
+}
+ 
 .spotlightMain{
     display: grid;
     grid-template-columns: 60% 40%;
@@ -21,7 +95,7 @@
     font-family: 'Bubblegum Sans';
     font-style: normal;
     font-size: 20px;
-    margin-right: 200px;
+    margin-right: 20px;
     color: #FFFFFF;
 }
 .makeCentre-l >div> h2{

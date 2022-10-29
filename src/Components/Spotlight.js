@@ -8,7 +8,13 @@ const Spotlight = () => {
     const [user, setUser] = useState([]);
     
     const fetchData = async () => {
-    const response = await fetch("https://api.nasa.gov/planetary/apod?api_key=gaff4Pwpu0Qg6woyFty1YhVRxhj4In1ImvOCyFD7&start_date=2022-10-01&end_date=2022-10-29&thumbs=true");
+    const currDay = new Date();
+    const currDate = (currDay.getDate()-1).toString();
+    const currMonth = (currDay.getMonth()+1).toString();
+    const prevMonth = (currDay.getMonth()).toString();
+    const currYear = currDay.getFullYear().toString();
+
+    const response = await fetch("https://api.nasa.gov/planetary/apod?api_key=gaff4Pwpu0Qg6woyFty1YhVRxhj4In1ImvOCyFD7&start_date="+currYear+"-"+prevMonth+"-28&end_date="+currYear+"-"+currMonth+"-"+currDate+"&thumbs=true");
     const data = await response.json();
         return setUser(data);
     }
@@ -30,11 +36,11 @@ const Spotlight = () => {
             <div className='spotlightMain' style={{marginRight:"50px", marginLeft: "50px"}}>
             <div className='makeCentre-l'>
                 <div style={{marginRight:"20px"}}>
-                    <h1 style={{paddingLeft:"20px", paddingBottom:"10px", }}>{user[user.length-1].title}</h1>
-                    <h5 style={{paddingLeft:"20px", paddingBottom:"10px", }}>
+                    <h1 className="reveal blue" style={{paddingLeft:"20px", paddingBottom:"10px", }}>{user[user.length-1].title}</h1>
+                    <h5 className="reveal purple" style={{paddingLeft:"20px", paddingBottom:"10px", }}>
                         {user[user.length-1].explanation}
                     </h5>
-                    <h2 style={{paddingLeft:"20px", marginBottom:"30px", }}>
+                    <h2 className="reveal purple" style={{paddingLeft:"20px", marginBottom:"30px", }}>
                         {user[user.length-1].copyright}
                     </h2>
 
