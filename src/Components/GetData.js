@@ -26,7 +26,7 @@ function GetData() {
         user.map((data) => (
             data.media_type === "image"?
             (
-                <img style={{height:"100px", width:"100px"}} src={data.url}/>
+                <img style={{height:"100px", width:"100px"}} src={data.url} alt='APIImage'/>
             )
             :
             (

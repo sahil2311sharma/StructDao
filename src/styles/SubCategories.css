@@ -49,3 +49,39 @@
     background: linear-gradient(180deg, #FD9DFF 0%, rgba(183, 157, 255, 0.42) 100%);
     
 }
+.results{
+  margin-top: 20px;
+    display: grid;
+    gap: 15px;
+    justify-content: space-evenly;
+    grid-template-columns: 14% 14% 14% 14% 14% 14% 14%;
+}
+@media only screen and (max-width: 1200px) {
+    .results{
+      grid-template-columns: 20% 20% 20% 20% 20%;
+  }
+}
+@media only screen and (max-width: 1000px) {
+    .results{
+      grid-template-columns: 25% 25% 25% 25%;
+  }
+}
+@media only screen and (max-width: 900px) {
+    .results{
+      display: flex;
+      flex-wrap: wrap;
+  }
+}
+
+.cardSeld{
+  display: inline-block;
+  /* width: 400px; */
+  /* height: 250px; */
+  margin: 1rem;
+  flex: 0.5;
+  text-align: center;
+  background: white;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 1rem;
+}

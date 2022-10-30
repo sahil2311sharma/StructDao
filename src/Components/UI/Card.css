@@ -3,7 +3,7 @@
     height: 273px;
     width: 192px;
     display: grid;
-    grid-template-rows: 50% 20% 20% 10%;
+    grid-template-rows: 60% 25% 15%;
     padding: 7px 7px 0px 7px;
 }
 .rounded-corners-gradient-borders {
@@ -59,4 +59,9 @@
     height: 90vh !important;
     width: 90% !important;
     overflow: hidden !important;
+}
+.divCentre > img{
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: contain;
 }

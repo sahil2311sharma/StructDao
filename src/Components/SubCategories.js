@@ -24,7 +24,7 @@ const SubCategories = () => {
     }
 
     useEffect(() => {
-        fetchData(myAPI);
+        fetchData();
     },[])
 
     const startLoader = () =>{
@@ -75,9 +75,9 @@ const SubCategories = () => {
         </form>
         {
             
-            <div style={{display:"flex", flexWrap:"wrap", gap:"15px", justifyContent:"space-evenly"}}>
+            <div className='results'>
             {
-                user.length > 0?(
+                user.length > 0 ?(
                 user.map((data) => (
                         <Card title={data.title}
                             url={data.url}

@@ -23,6 +23,8 @@ html {
 	 user-select: none;
 	 animation-name: reveal-text;
 	 cursor: default;
+	 padding-left: 20px;
+	 padding-top: 10px;
 }
  .reveal:after {
 	 content: "";
@@ -79,6 +81,8 @@ html {
     grid-template-columns: 60% 40%;
     padding: 20px;
     min-height: 70.1vh;
+	margin-right: 50px;
+	margin-left:50px;
 }
 .makeCentre-l{
     display: flex;
@@ -110,5 +114,7 @@ html {
     align-items: center;
 }
 .spotImage{
-    
+    border-radius: 20px;
+	height: 488px;
+	width: 400px;
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import './../styles/Spotlight.css'
+
 import Loader from "react-js-loader";
+import SpotTab from "./SpotTab";
 import SubCategories from "./SubCategories";
 
 
@@ -31,32 +32,17 @@ const Spotlight = () => {
             :
             (
             <div>
-                <div className='spotlightMain' style={{marginRight:"50px", marginLeft: "50px"}}>
-                    <div className='makeCentre-l'>
-                        <div style={{marginRight:"20px"}}>
-                            <h1 className="reveal blue" style={{paddingLeft:"20px", paddingBottom:"10px", }}>{user[user.length-1].title}</h1>
-                            <h5 className="reveal purple" style={{paddingLeft:"20px", paddingBottom:"10px", }}>
-                                {user[user.length-1].explanation}
-                            </h5>
-                            <h2 className="reveal purple" style={{paddingLeft:"20px", marginBottom:"30px", }}>
-                                {user[user.length-1].copyright}
-                            </h2>
-                        </div>
-                    </div>
-                    <div className='makeCentre'>
-                        <div style={{margin:"50px ", backgroundColor:"#D9D9D9", height:"492px", padding:"2px", borderRadius: "20px" }}>
-                            {user[user.length-1].media_type === "image"?
-                            (
-                                <img src={user[user.length-1].hdurl} style={{borderRadius:"20px", height:"488px", width:"400px"}}  className='spotImage'/>
-                            ):(
-                                <iframe style={{borderRadius:"20px", height:"488px", width:"400px"}}  className='spotImage video'
-                                    title='Youtube player'
-                                    sandbox='allow-same-origin allow-forms allow-popups allow-scripts allow-presentation'
-                                    src={user[user.length-1].url+"&autoplay=1&showinfo=0&controls=0&loop=1"}>
-                                </iframe>
-                            )
-                            }
-                        </div>
+                <div>
+                    <SpotTab title={user[user.length-1].title}
+                        explanation={user[user.length-1].explanation} 
+                        name = {user[user.length-1].copyright}
+                        type = {user[user.length-1].media_type}
+                        hdurl = {user[user.length-1].hdurl}
+                        url = {user[user.length-1].url}
+                        vid_url = {user[user.length-1].thumbnail_url}
+                        />
+                    <div >
+                        
                     </div>
                 </div>
                 <SubCategories/>

@@ -31,6 +31,10 @@ h1{
     margin: 0% !important;;
     color: #FFFFFF;
 }
+.leftNav{
+    display: flex;
+    flex-direction: column;
+}
 .midNav{
     display: flex;
     justify-content: center;

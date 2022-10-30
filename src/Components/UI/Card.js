@@ -1,25 +1,22 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
-import Button from '@mui/material/Button';
 import ElementBox from './ElementBox';
+import { Image } from 'react-shimmer'
+import Loader from "react-js-loader";
 
 import './Card.css'
 const style = {
-  position: 'absolute',
+    position: 'absolute',
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 400,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
-  boxShadow: 24,
-  p: 4,
+  backgroundColor:"transparent",
 };
 
 
 const Card = (props) => {
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
   return (
@@ -28,11 +25,11 @@ const Card = (props) => {
         {
             props.type === "image"?
             (
-                <img src={props.url} className='cardImage'/>
+                <Image src={props.url} nClick={handleOpen} className='cardImage' alt='apiImage' fallback={<Loader type="spinner-circle" bgColor={"#FFFFFF"} color={'#FFFFFF'} size={100} />}/>
             )
             :
             (  
-                <img src={props.vid_url} className='cardImage'/>
+                <img src={props.vid_url} onClick={handleOpen} className='cardImage' alt='apiImage'/>
             )
         }
         </div>
@@ -43,8 +40,7 @@ const Card = (props) => {
         <div className='cardDate'>
             {props.date}
         </div>
-        <div style={{color:"wheat", display:"flex", justifyContent:"center", alignItems: "center"}}>
-            <Button onClick={handleOpen}>Open modal</Button>
+        <div style={{display:"flex", justifyContent:"center", alignItems: "center"}}>
             <Modal
                 keepMounted
                 open={open}
@@ -53,9 +49,9 @@ const Card = (props) => {
                 aria-describedby="keep-mounted-modal-description"
             >
             <Box sx={style}>
-                <ElementBox/>
+                <ElementBox  type = {props.type} url = {props.url} vid_url = {props.vid_url}/>
             </Box>
-      </Modal>
+            </Modal>
         </div>
     </div>
   )
