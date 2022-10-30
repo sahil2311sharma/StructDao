@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+.subCategories{
+    padding: 20px;
+}
+.subCategories h1{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 42px;
+    text-decoration-line: underline;
+    color: #FFFFFF;
+}

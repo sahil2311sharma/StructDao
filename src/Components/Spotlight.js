@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import './../styles/Spotlight.css'
 import Loader from "react-js-loader";
+import SubCategories from "./SubCategories";
 
-import companyLogo from './../Images/spot.png';
 
 const Spotlight = () => {
     const [user, setUser] = useState([]);
@@ -24,34 +24,46 @@ const Spotlight = () => {
     })
     return (
         <div>
-        {
-            console.log(user)
-        }
+            {
+                console.log(user)
+            }
         {
             user&& user.length === 0?
             (
             <Loader type="spinner-circle" bgColor={"#FFFFFF"} title={"Loading Please Wait"} color={'#FFFFFF'} size={100} />)
             :
             (
+            <div>
             <div className='spotlightMain' style={{marginRight:"50px", marginLeft: "50px"}}>
             <div className='makeCentre-l'>
                 <div style={{marginRight:"20px"}}>
-                    <h1 className="reveal blue" style={{paddingLeft:"20px", paddingBottom:"10px", }}>{user[user.length-1].title}</h1>
+                    <h1 className="reveal blue" style={{paddingLeft:"20px", paddingBottom:"10px", }}>{user[7].title}</h1>
                     <h5 className="reveal purple" style={{paddingLeft:"20px", paddingBottom:"10px", }}>
-                        {user[user.length-1].explanation}
+                        {user[7].explanation}
                     </h5>
                     <h2 className="reveal purple" style={{paddingLeft:"20px", marginBottom:"30px", }}>
-                        {user[user.length-1].copyright}
+                        {user[7].copyright}
                     </h2>
-
                 </div>
             </div>
             <div className='makeCentre'>
                 <div style={{margin:"50px ", backgroundColor:"#D9D9D9", height:"492px", padding:"2px", borderRadius: "20px" }}>
-                    <img src={user[user.length-1].url} style={{borderRadius:"20px", height:"488px", width:"400px"}}  className='spotImage'/>
+                    {user[7].media_type === "image"?
+                    (
+                        <img src={user[7].hdurl} style={{borderRadius:"20px", height:"488px", width:"400px"}}  className='spotImage'/>
+                    ):(
+                        <iframe style={{borderRadius:"20px", height:"488px", width:"400px"}}  className='spotImage video'
+                            title='Youtube player'
+                            sandbox='allow-same-origin allow-forms allow-popups allow-scripts allow-presentation'
+                            src={user[7].url+"&autoplay=1&showinfo=0&controls=0&loop=1"}>
+                        </iframe>
+                    )
+                    }
                 </div>
             </div>
-        </div>
+            </div>
+            <SubCategories/>
+            </div>
             )
         }
         </div>

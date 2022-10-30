@@ -33,7 +33,7 @@ function GetData() {
             <iframe className='video'
                 title='Youtube player'
                 sandbox='allow-same-origin allow-forms allow-popups allow-scripts allow-presentation'
-                src={data.url+"&autoplay=1&showinfo=0&controls=0"}>
+                src={data.url+"&autoplay=1&showinfo=0&controls=0&loop=1"}>
             </iframe>
             )
           ))
