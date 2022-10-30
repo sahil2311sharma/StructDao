@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
-import './../styles/Spotlight.css'
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import ElementBox from './UI/ElementBox';
-
-
+import './../styles/Spotlight.css'
 
 const style = {
   position: 'absolute',
@@ -21,18 +19,18 @@ const SpotTab = (props) => {
   return (
     <div className='spotlightMain'>
       <div className='makeCentre-l'>
-          <div style={{marginRight:"20px"}}>
+          <div className='distSeperator'>
               <h1 className="reveal blue">{props.title}</h1>
               <h5 className="reveal purple">
                   {props.explanation}
               </h5>
-              <h2 className="reveal purple" style={{paddingLeft:"20px", marginBottom:"30px", }}>
+              <h2 className="reveal purple" >
                   {props.name}
               </h2>
           </div>
       </div>
       <div className='makeCentre'>
-          <div style={{margin:"50px ", backgroundColor:"#D9D9D9", height:"492px", padding:"2px", borderRadius: "20px" }}>
+          <div className='spotlightImgBox'>
               {props.type === "image"?
               (
                   <img src={props.hdurl} onClick={handleOpen}  className='spotImage' alt='APIImage'/>

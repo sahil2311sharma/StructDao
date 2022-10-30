@@ -24,7 +24,7 @@ const Spotlight = () => {
         fetchData();
     },[])
     return (
-        <div style={{paddingTop:"150px"}}>
+        <div style={{marginLeft:"20px", marginRight:"20px"}}>
         {
             user&& user.length === 0?
             (
@@ -40,10 +40,7 @@ const Spotlight = () => {
                         hdurl = {user[user.length-1].hdurl}
                         url = {user[user.length-1].url}
                         vid_url = {user[user.length-1].thumbnail_url}
-                        />
-                    <div >
-                        
-                    </div>
+                    />
                 </div>
                 <SubCategories/>
             </div>

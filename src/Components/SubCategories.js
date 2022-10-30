@@ -18,7 +18,7 @@ const SubCategories = () => {
             return setUser(data);
         } 
         catch (error) {
-            console.log(error);
+            
         }
         setCheckClick(0);
     }
@@ -50,11 +50,11 @@ const SubCategories = () => {
       <div>
         <h1>SUB CATEGORIES</h1>
       </div>
-      <h1>Select Duration</h1>
+      <h2>Select Duration</h2>
 
       <form onSubmit={submitHandler}>
             <div className='new-expense__control'>
-                <label style={{marginTop:"10px", marginRight:"5px"}}>Start Date:</label>
+                <label>Start Date:</label>
                 <input style={{width:"170px"}}
                     type='date'
                     min='1019-01-01'
@@ -62,7 +62,7 @@ const SubCategories = () => {
                     value={startDate}
                     onChange={startDateChangeHandler}
                 />
-                <label style={{marginTop:"10px", marginLeft:"20px", marginRight:"5px"}}>End Date:</label>
+                <label>End Date:</label>
                 <input style={{width:"170px"}}
                     type='date'
                     min='1019-01-01'
