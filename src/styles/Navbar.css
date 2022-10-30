@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap');
 
 .containerNav{
-    display: grid;
-    grid-template-columns: 20% 60% 20%;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 1;
+    right: 0px;
+    left: 0px;
 }
 .nasaName{
     font-family: 'Bowlby One SC';

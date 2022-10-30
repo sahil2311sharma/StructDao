@@ -1,9 +1,11 @@
 import React from 'react'
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
+import Spotlight from './Spotlight';
 import './../styles/Navbar.css'
 const header = () => {
   return (
+    <>
     <Navbar>
         <Container className='containerNav'>
             <div className='leftNav'>
@@ -21,11 +23,10 @@ const header = () => {
             <div className='midNav'>
                 <h1>astronomy picture of the day</h1>     
             </div>
-            <div className='rightNav'>
-
-            </div>
         </Container>
       </Navbar>
+      <Spotlight/>
+      </>
   )
 }
 

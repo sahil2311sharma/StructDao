@@ -3,7 +3,7 @@
     height: 273px;
     width: 192px;
     display: grid;
-    grid-template-rows: 60% 25% 15%;
+    grid-template-rows: 50% 20% 20% 10%;
     padding: 7px 7px 0px 7px;
 }
 .rounded-corners-gradient-borders {
@@ -54,4 +54,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.css-1wnsr1i{
+    height: 90vh !important;
+    width: 90% !important;
+    overflow: hidden !important;
 }

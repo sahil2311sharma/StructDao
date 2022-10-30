@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './../styles/SubCategories.css'
-import ClipLoader from "react-spinners/ClipLoader";
+import Loader from "react-js-loader";
 import Card from './UI/Card'
 
 const SubCategories = () => {
@@ -47,32 +47,31 @@ const SubCategories = () => {
 
   return (
     <div className='subCategories'>
-      <h1>SUB CATEGORIES</h1>
-      <br/>
-      <h1 style={{fontStyle: "normal", fontSize: "30px", lineSeight: "36px", color: "#FFFFFF", fontFamily: 'Bruno Ace SC'}}>Select Duration</h1>
+      <div>
+        <h1>SUB CATEGORIES</h1>
+      </div>
+      <h1>Select Duration</h1>
 
       <form onSubmit={submitHandler}>
-            <div>
-            <label>Start Date:</label>
-            <input
-                type='date'
-                min='1019-01-01'
-                max='2022-12-31'
-                value={startDate}
-                onChange={startDateChangeHandler}
-            />
-            
-            <label>End Date:</label>
-            <input
-                type='date'
-                min='1019-01-01'
-                max='2022-12-31'
-                value={endDate}
-                onChange={endDateChangeHandler}
-            />
+            <div className='new-expense__control'>
+                <label style={{marginTop:"10px", marginRight:"5px"}}>Start Date:</label>
+                <input style={{width:"170px"}}
+                    type='date'
+                    min='1019-01-01'
+                    max='2022-12-31'
+                    value={startDate}
+                    onChange={startDateChangeHandler}
+                />
+                <label style={{marginTop:"10px", marginLeft:"20px", marginRight:"5px"}}>End Date:</label>
+                <input style={{width:"170px"}}
+                    type='date'
+                    min='1019-01-01'
+                    max='2022-12-31'
+                    value={endDate}
+                    onChange={endDateChangeHandler}
+                />
             </div>
-            
-            <input type="submit" value="Submit" onClick={startLoader}/>
+            <input type="submit" value="Submit" onClick={startLoader} className="submitButton"/>
         </form>
         {
             
@@ -81,13 +80,14 @@ const SubCategories = () => {
                 user.length > 0?(
                 user.map((data) => (
                         <Card title={data.title}
-                        url={data.url}
-                        date={data.date} 
-                        type = {data.media_type}
+                            url={data.url}
+                            date={data.date} 
+                            type = {data.media_type}
+                            vid_url = {data.thumbnail_url}
                         />
                     
                     ))
-                ):(checkClick === 0?(<></>):(<ClipLoader/>))
+                ):(checkClick === 0?(<></>):(<Loader type="spinner-circle" bgColor={"#FFFFFF"} title={"Loading Please Wait"} color={'#FFFFFF'} size={100} />))
             }
             </div>
         }
