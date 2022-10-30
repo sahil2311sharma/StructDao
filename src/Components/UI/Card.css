@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Koh+Santepheap&display=swap');
+.cardMain{
+    height: 273px;
+    width: 192px;
+    display: grid;
+    grid-template-rows: 60% 25% 15%;
+    padding: 7px 7px 0px 7px;
+}
+.rounded-corners-gradient-borders {
+    border: double 4px transparent;
+    border-radius: 20px;
+    background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)), radial-gradient(circle at top left, #f00,#3020ff);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+.divCentre{
+    border-radius: 20px 20px 0px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.imageBox{
+    position: relative;
+    
+}
+.cardImage{
+    overflow: hidden;
+    max-height:100%;
+    max-width:100%;
+    object-fit: contain;
+    border-radius: 20px 20px ;
+}
+.cardImage:hover{
+    scale: 1.1;
+    transition: 1s;
+}
+.cardTitle{
+    font-family: 'Koh Santepheap';
+    font-style: normal;
+    font-size: 15px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.cardDate{
+    font-family: 'Krub';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -21,7 +21,7 @@ const Spotlight = () => {
 
     useEffect(() => {
         fetchData();
-    })
+    },[])
     return (
         <div>
             {
@@ -37,25 +37,25 @@ const Spotlight = () => {
             <div className='spotlightMain' style={{marginRight:"50px", marginLeft: "50px"}}>
             <div className='makeCentre-l'>
                 <div style={{marginRight:"20px"}}>
-                    <h1 className="reveal blue" style={{paddingLeft:"20px", paddingBottom:"10px", }}>{user[7].title}</h1>
+                    <h1 className="reveal blue" style={{paddingLeft:"20px", paddingBottom:"10px", }}>{user[user.length-1].title}</h1>
                     <h5 className="reveal purple" style={{paddingLeft:"20px", paddingBottom:"10px", }}>
-                        {user[7].explanation}
+                        {user[user.length-1].explanation}
                     </h5>
                     <h2 className="reveal purple" style={{paddingLeft:"20px", marginBottom:"30px", }}>
-                        {user[7].copyright}
+                        {user[user.length-1].copyright}
                     </h2>
                 </div>
             </div>
             <div className='makeCentre'>
                 <div style={{margin:"50px ", backgroundColor:"#D9D9D9", height:"492px", padding:"2px", borderRadius: "20px" }}>
-                    {user[7].media_type === "image"?
+                    {user[user.length-1].media_type === "image"?
                     (
-                        <img src={user[7].hdurl} style={{borderRadius:"20px", height:"488px", width:"400px"}}  className='spotImage'/>
+                        <img src={user[user.length-1].hdurl} style={{borderRadius:"20px", height:"488px", width:"400px"}}  className='spotImage'/>
                     ):(
                         <iframe style={{borderRadius:"20px", height:"488px", width:"400px"}}  className='spotImage video'
                             title='Youtube player'
                             sandbox='allow-same-origin allow-forms allow-popups allow-scripts allow-presentation'
-                            src={user[7].url+"&autoplay=1&showinfo=0&controls=0&loop=1"}>
+                            src={user[user.length-1].url+"&autoplay=1&showinfo=0&controls=0&loop=1"}>
                         </iframe>
                     )
                     }

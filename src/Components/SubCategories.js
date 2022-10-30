@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './../styles/SubCategories.css'
 import ClipLoader from "react-spinners/ClipLoader";
+import Card from './UI/Card'
 
 const SubCategories = () => {
     const [startDate, setStartDate] = useState('');
@@ -74,22 +75,21 @@ const SubCategories = () => {
             <input type="submit" value="Submit" onClick={startLoader}/>
         </form>
         {
-            user && user.length > 0?(
-        user.map((data) => (
-            data.media_type === "image"?
-            (
-                <img style={{height:"100px", width:"100px"}} src={data.url}/>
-            )
-            :
-            (
-            <iframe className='video'
-                title='Youtube player'
-                sandbox='allow-same-origin allow-forms allow-popups allow-scripts allow-presentation'
-                src={data.url+"&autoplay=1&showinfo=0&controls=0&loop=1"}>
-            </iframe>
-            )
-          ))
-        ):(checkClick === 0?(<></>):(<ClipLoader/>))
+            
+            <div style={{display:"flex", flexWrap:"wrap", gap:"15px", justifyContent:"space-evenly"}}>
+            {
+                user.length > 0?(
+                user.map((data) => (
+                        <Card title={data.title}
+                        url={data.url}
+                        date={data.date} 
+                        type = {data.media_type}
+                        />
+                    
+                    ))
+                ):(checkClick === 0?(<></>):(<ClipLoader/>))
+            }
+            </div>
         }
     </div>
   )
