@@ -4,6 +4,8 @@ import Modal from '@mui/material/Modal';
 import ElementBox from './ElementBox';
 import Loader from "react-js-loader";
 import './../styles/Spotlight.css'
+import ElementBoxOne from './ElementBoxOne';
+
 
 const style = {
   position: 'absolute',
@@ -34,7 +36,7 @@ const SpotTab = (props) => {
           <div className='spotlightImgBox'>
               {props.type === "image"?
               (
-                  <img src={props.hdurl} onClick={handleOpen}  className='spotImage' alt='APIImage' fallback={
+                  <img src={props.url} onClick={handleOpen}  className='spotImage' alt='APIImage' fallback={
                 //   <Shimmer width={800} height={600} />}
                   <Loader type="spinner-circle" bgColor={"#FFFFFF"} color={'#FFFFFF'} size={100} />}
                 />
@@ -52,7 +54,7 @@ const SpotTab = (props) => {
                 aria-describedby="keep-mounted-modal-description"
             >
             <Box sx={style}>
-                <ElementBox  type = {props.type} url = {props.url} vid_url = {props.vid_url}/>
+                <ElementBoxOne  type = {props.type} url = {props.hdurl} vid_url = {props.vid_url}/>
             </Box>
             </Modal>
         </div>

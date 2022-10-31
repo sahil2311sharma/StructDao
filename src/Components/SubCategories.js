@@ -87,6 +87,7 @@ const SubCategories = () => {
                             type = {data.media_type}
                             vid_url = {data.thumbnail_url}
                             explanation = {data.explanation}
+                            name = {data.copyright}
                         />
                     
                     ))

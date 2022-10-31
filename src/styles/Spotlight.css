@@ -82,7 +82,7 @@ html {
     padding: 20px;
     min-height: 90vh;
 }
-.makeCentre-l{
+.makeCentre-left{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -95,19 +95,21 @@ html {
 	margin-right: 100px;
 	margin-left: 50px;
 }
-.makeCentre-l >div> h1 {
+.makeCentre-left >div> h1 {
     font-family: 'Bowlby One SC';
     font-style: normal;
-    font-size: 45px;
+    font-size: 30px;
     color: #FF0000;
 }
-.makeCentre-l >div> h5 {
+.makeCentre-left >div> h5 {
     font-family: 'Bubblegum Sans';
     font-style: normal;
-    font-size: 25px;
+    font-size: 17px;
     color: #FFFFFF;
+	height: 100px;
+	overflow: auto;
 }
-.makeCentre-l >div> h2{
+.makeCentre-left >div> h2{
     font-family:serif;
     font-style: normal;
     font-size: 25px;
@@ -146,13 +148,24 @@ html {
 	}
 }
 @media only screen and (max-width: 700px){
-	.makeCentre-l >div> h1 {
+	.makeCentre-left >div> h1 {
 		font-size: 30px;
 	}
-	.makeCentre-l >div> h5{
+	.makeCentre-left >div> h5{
 		font-size: 20px;
 	}
-	.makeCentre-l >div> h2{
+	.makeCentre-left >div> h2{
+		padding-bottom: 20px;
+	}
+}
+@media only screen and (max-width: 500px){
+	.makeCentre-left >div> h1 {
+		font-size: 20px;
+	}
+	.makeCentre-left >div> h5{
+		font-size: 20px;
+	}
+	.makeCentre-left >div> h2{
 
 	}
 	.distSeperator{

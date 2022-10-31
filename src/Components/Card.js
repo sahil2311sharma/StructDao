@@ -11,7 +11,10 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  backgroundColor:"transparent",
+  backgroundColor:"#2c2c2c",
+  width:"80%",
+  height:"80%",
+  borderRadius:"50px",
 };
 
 
@@ -19,13 +22,12 @@ const Card = (props) => {
     const [open, setOpen] = useState(false);
     const handleOpen = () => 
     {
-        console.log("clicked");
         return setOpen(true);
     }
     const handleClose = () => setOpen(false);
   return (
     <div className='cardMain rounded-corners-gradient-borders '>
-        <div className='divCentre'>
+        <div className='divCentre' onClick={handleOpen}>
         {
             props.type === "image"?
             (
@@ -43,7 +45,6 @@ const Card = (props) => {
         </div>
         <div className='cardDate'>
             {props.date}
-            <p onClick={handleOpen}>Explore More</p>
         </div>
         <div style={{display:"flex", justifyContent:"center", alignItems: "center"}}>
             <Modal
@@ -54,7 +55,11 @@ const Card = (props) => {
                 aria-describedby="keep-mounted-modal-description"
             >
             <Box sx={style}>
-                <ElementBox type = {props.type} url = {props.hdurl} vid_url = {props.vid_url}/>
+                <ElementBox
+                    explanation = {props.explanation}
+                    title = {props.title}
+                    name = {props.name}
+                    type = {props.type} url = {props.hdurl} vid_url = {props.vid_url}/>
             </Box>
             </Modal>
         </div>

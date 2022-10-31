@@ -1,0 +1,82 @@
+.elementBoxMain{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    overflow: auto;
+}
+.elementImage{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.spotlightMainOne{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    padding: 20px;
+    
+}
+.makeCentre-l{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.makeCentre-l >div> h1 {
+    font-family: 'Bowlby One SC';
+    font-style: normal;
+    font-size: 45px;
+    color: #FF0000;
+}
+.makeCentre-l >div> h5 {
+    font-family: 'Bubblegum Sans';
+    font-style: normal;
+    font-size: 25px;
+    color: #FFFFFF;
+}
+.makeCentre-l >div> h2{
+    font-family:serif;
+    font-style: normal;
+    font-size: 25px;
+    color: #FFFFFF;
+}
+.spotlightImgBoxOne{
+	margin: 50px;
+	background-color: #D9D9D9;
+	height:492px;
+	padding: 2px;
+	border-radius: 20px;
+}
+.spotImageOne{
+    border-radius: 20px;
+	height: 488px;
+	width: 400px;
+}
+@media only screen and (max-width: 1000px) {
+	.spotlightMainOne{
+		display: flex;
+		flex-direction: column;
+	}
+}
+@media only screen and (max-width: 700px){
+	.spotlightImgBoxOne{
+		height: 244px;
+	}
+	.spotImageOne{
+		height: 240px;
+		width: 250px;
+	}
+}
+@media only screen and (max-width: 700px){
+	.makeCentre-l >div> h1 {
+		font-size: 30px;
+	}
+	.makeCentre-l >div> h5{
+		font-size: 20px;
+	}
+	.makeCentre-l >div> h2{
+
+	}
+	.distSeperator{
+		margin: 0;
+	}
+}
