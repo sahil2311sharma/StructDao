@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Loader from "react-js-loader";
 import { Audio } from 'react-loader-spinner'
 
 import Header from "./Header";

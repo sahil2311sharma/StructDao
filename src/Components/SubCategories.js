@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './../styles/SubCategories.css'
 import Loader from "react-js-loader";
-import { Shimmer } from 'react-shimmer'
-import { Audio } from 'react-loader-spinner'
-
 import Card from './Card'
 
 const SubCategories = () => {
