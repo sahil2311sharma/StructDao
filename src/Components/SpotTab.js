@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
-import ElementBox from './ElementBox';
 import Loader from "react-js-loader";
 import './../styles/Spotlight.css'
 import ElementBoxOne from './ElementBoxOne';
