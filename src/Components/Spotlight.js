@@ -10,9 +10,9 @@ const Spotlight = () => {
     
     const fetchData = async () => {
     const currDay = new Date();
-    const currDate = (currDay.getDate()-1).toString();
+    const currDate = (currDay.getDate()).toString();
     const currMonth = (currDay.getMonth()+1).toString();
-    const prevMonth = (currDay.getMonth()).toString();
+    const prevMonth = (currDay.getMonth()+1).toString();
     const currYear = currDay.getFullYear().toString();
     const prevYear = (currDay.getFullYear()).toString();
 
