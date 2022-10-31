@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import ElementBox from './ElementBox';
-import SpotTab from "./SpotTab";
 import { Image } from 'react-shimmer'
 import Loader from "react-js-loader";
 
@@ -18,10 +17,8 @@ const style = {
 
 const Card = (props) => {
     const [open, setOpen] = useState(false);
-    const [change, setChange] = useState(false);
     const handleOpen = () => 
     {
-        setChange(true);
         console.log("clicked");
         return setOpen(true);
     }
