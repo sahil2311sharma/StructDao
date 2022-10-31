@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './../styles/SubCategories.css'
 import Loader from "react-js-loader";
-import Card from './UI/Card'
+import Card from './Card'
 
 const SubCategories = () => {
     const [startDate, setStartDate] = useState('');
@@ -39,6 +39,7 @@ const SubCategories = () => {
     };
     const submitHandler = (event) => {
         event.preventDefault();
+        setUser([]);
         myAPI = myAPI + startDate + "&end_date="+endDate+"&thumbs=true";
         fetchData(myAPI);
         setStartDate('');
@@ -55,7 +56,7 @@ const SubCategories = () => {
       <form onSubmit={submitHandler}>
             <div className='new-expense__control'>
                 <label>Start Date:</label>
-                <input style={{width:"170px"}}
+                <input
                     type='date'
                     min='1019-01-01'
                     max='2022-12-31'
@@ -63,7 +64,7 @@ const SubCategories = () => {
                     onChange={startDateChangeHandler}
                 />
                 <label>End Date:</label>
-                <input style={{width:"170px"}}
+                <input
                     type='date'
                     min='1019-01-01'
                     max='2022-12-31'
@@ -81,9 +82,11 @@ const SubCategories = () => {
                 user.map((data) => (
                         <Card title={data.title}
                             url={data.url}
+                            hdurl={data.hdurl}
                             date={data.date} 
                             type = {data.media_type}
                             vid_url = {data.thumbnail_url}
+                            explanation = {data.explanation}
                         />
                     
                     ))

@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
-import ElementBox from './UI/ElementBox';
+import ElementBox from './ElementBox';
+import { Image } from 'react-shimmer'
+import Loader from "react-js-loader";
 import './../styles/Spotlight.css'
 
 const style = {
@@ -33,7 +35,7 @@ const SpotTab = (props) => {
           <div className='spotlightImgBox'>
               {props.type === "image"?
               (
-                  <img src={props.hdurl} onClick={handleOpen}  className='spotImage' alt='APIImage'/>
+                  <img src={props.hdurl} onClick={handleOpen}  className='spotImage' alt='APIImage' fallback={<Loader type="spinner-circle" bgColor={"#FFFFFF"} color={'#FFFFFF'} size={100} />}/>
               ):(
                   <img src={props.vid_url} onClick={handleOpen}  className='spotImage' alt='APIImage'/>
               )

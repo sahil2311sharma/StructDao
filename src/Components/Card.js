@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import ElementBox from './ElementBox';
+import SpotTab from "./SpotTab";
 import { Image } from 'react-shimmer'
 import Loader from "react-js-loader";
 
-import './Card.css'
+import './../styles/Card.css'
 const style = {
     position: 'absolute',
   top: '50%',
@@ -17,7 +18,13 @@ const style = {
 
 const Card = (props) => {
     const [open, setOpen] = useState(false);
-    const handleOpen = () => setOpen(true);
+    const [change, setChange] = useState(false);
+    const handleOpen = () => 
+    {
+        setChange(true);
+        console.log("clicked");
+        return setOpen(true);
+    }
     const handleClose = () => setOpen(false);
   return (
     <div className='cardMain rounded-corners-gradient-borders '>
@@ -25,11 +32,11 @@ const Card = (props) => {
         {
             props.type === "image"?
             (
-                <Image src={props.url} nClick={handleOpen} className='cardImage' alt='apiImage' fallback={<Loader type="spinner-circle" bgColor={"#FFFFFF"} color={'#FFFFFF'} size={100} />}/>
+                <Image src={props.url} className='cardImage' alt='apiImage' fallback={<Loader type="spinner-circle" bgColor={"#FFFFFF"} color={'#FFFFFF'} size={100} />}/>
             )
             :
             (  
-                <img src={props.vid_url} onClick={handleOpen} className='cardImage' alt='apiImage'/>
+                <img src={props.vid_url} className='cardImage' alt='apiImage' />
             )
         }
         </div>
@@ -39,6 +46,7 @@ const Card = (props) => {
         </div>
         <div className='cardDate'>
             {props.date}
+            <p onClick={handleOpen}>Explore More</p>
         </div>
         <div style={{display:"flex", justifyContent:"center", alignItems: "center"}}>
             <Modal
@@ -49,7 +57,7 @@ const Card = (props) => {
                 aria-describedby="keep-mounted-modal-description"
             >
             <Box sx={style}>
-                <ElementBox  type = {props.type} url = {props.url} vid_url = {props.vid_url}/>
+                <ElementBox type = {props.type} url = {props.hdurl} vid_url = {props.vid_url}/>
             </Box>
             </Modal>
         </div>
