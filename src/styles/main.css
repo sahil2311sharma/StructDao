@@ -7,9 +7,16 @@
     background: rgb(0, 0, 0);
     min-height: 100vh;
 }
-.sl-spinner2{
+
+.myLoader{
     position: absolute;
     top: 50%;
-    transform: translate(-50%, -50%);
     left: 50%;
+    transform: translate(-50%, -50%);
+}
+.myLoader > div{
+    justify-content: center;
+}
+.myLoader > h1{
+    color: white;
 }

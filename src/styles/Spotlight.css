@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
-/* 
+
 html {
 	 box-sizing: border-box;
 }
@@ -74,7 +74,7 @@ html {
 	 100% {
 		 transform: scaleX(0);
 	}
-} */
+}
  
 .spotlightMain{
     display: grid;

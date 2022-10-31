@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import './../styles/SubCategories.css'
 import Loader from "react-js-loader";
+import { Shimmer } from 'react-shimmer'
+import { Audio } from 'react-loader-spinner'
+
 import Card from './Card'
 
 const SubCategories = () => {
@@ -90,7 +93,11 @@ const SubCategories = () => {
                         />
                     
                     ))
-                ):(checkClick === 0?(<></>):(<Loader type="spinner-circle" bgColor={"#FFFFFF"} title={"Loading Please Wait"} color={'#FFFFFF'} size={100} />))
+                ):(checkClick === 0?(<></>):(
+                
+                <Loader type="spinner-circle" bgColor={"#FFFFFF"} title={"Loading Please Wait"} color={'#FFFFFF'} size={100} />
+                
+                ))
             }
             </div>
         }

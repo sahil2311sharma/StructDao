@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Loader from "react-js-loader";
+import { Audio } from 'react-loader-spinner'
+
 import Header from "./Header";
 import SpotTab from "./SpotTab";
 import SubCategories from "./SubCategories";
@@ -28,7 +30,12 @@ const Spotlight = () => {
         {
             user&& user.length === 0?
             (
-            <Loader type="spinner-circle" bgColor={"#FFFFFF"} title={"Loading Please Wait"} color={'#FFFFFF'} size={100} />)
+            // <Loader type="spinner-circle" bgColor={"#FFFFFF"} title={"Loading Please Wait"} color={'#FFFFFF'} size={100} />
+            <div className="myLoader">
+                <Audio/>
+                <h1>Loading</h1>
+            </div>
+            )
             :
             (
             <div>

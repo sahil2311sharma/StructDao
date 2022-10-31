@@ -34,7 +34,10 @@ const SpotTab = (props) => {
           <div className='spotlightImgBox'>
               {props.type === "image"?
               (
-                  <img src={props.hdurl} onClick={handleOpen}  className='spotImage' alt='APIImage' fallback={<Loader type="spinner-circle" bgColor={"#FFFFFF"} color={'#FFFFFF'} size={100} />}/>
+                  <img src={props.hdurl} onClick={handleOpen}  className='spotImage' alt='APIImage' fallback={
+                //   <Shimmer width={800} height={600} />}
+                  <Loader type="spinner-circle" bgColor={"#FFFFFF"} color={'#FFFFFF'} size={100} />}
+                />
               ):(
                   <img src={props.vid_url} onClick={handleOpen}  className='spotImage' alt='APIImage'/>
               )
