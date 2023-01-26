@@ -16,7 +16,7 @@ const Spotlight = () => {
     const currYear = currDay.getFullYear().toString();
     const prevYear = (currDay.getFullYear()).toString();
 
-    const response = await fetch("https://api.nasa.gov/planetary/apod?api_key=gaff4Pwpu0Qg6woyFty1YhVRxhj4In1ImvOCyFD7&start_date="+prevYear+"-"+prevMonth+"-28&end_date="+currYear+"-"+currMonth+"-"+currDate+"&thumbs=true");
+    const response = await fetch("https://api.nasa.gov/planetary/apod?api_key=gaff4Pwpu0Qg6woyFty1YhVRxhj4In1ImvOCyFD7&start_date="+prevYear+"-"+currMonth+"-1&end_date="+currYear+"-"+currMonth+"-"+currDate+"&thumbs=true");
     const data = await response.json();
         return setUser(data);
     }
